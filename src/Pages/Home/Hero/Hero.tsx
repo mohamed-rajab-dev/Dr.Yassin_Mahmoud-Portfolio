@@ -1,22 +1,25 @@
 import Image from 'next/image';
-import {
-	Activity,
-	BriefcaseMedical,
-	Building2,
-	Database,
-	Globe,
-} from 'lucide-react';
+import { FiActivity } from 'react-icons/fi';
+import { FaDatabase, FaGlobe } from 'react-icons/fa';
+import { LuBuilding2, LuBriefcaseMedical } from 'react-icons/lu';
+
+// import {
+// 	Activity,
+// 	BriefcaseMedical,
+// 	Building2,
+// 	Database,
+// 	Globe,
+// } from 'lucide-react';
 export function Hero() {
 	return (
-		<div className='h-screen max-h-[700px] font-sans w-full bg-background relative'>
+		<div className='h-screen  max-h-[700px] font-sans w-full bg-background relative'>
 			<div className='h-full w-full z-20 relative'>
-				<Activity className='absolute hidden sm:block top-1/2 sm:-left-10 md:-left-20 lg:-left-30 xl:-left-50 transform w-1/2 h-1/2 -translate-y-1/2  text-primary/20' />
+				<FiActivity className='absolute hidden sm:block top-1/2 sm:-left-10 md:-left-20 lg:-left-30 xl:-left-50 transform w-1/2 h-1/2 -translate-y-1/2  text-primary/20' />
 				<div
-					className='absolute h-[60%] w-[90%] left-1/2 -translate-x-1/2 bottom-0
+					className='absolute h-fit w-[90%] left-1/2 -translate-x-1/2 bottom-0 flex flex-col
                 sm:left-0 sm:translate-x-0 sm:top-0 sm:h-full sm:w-[55%]
                 bg-background/30 border border-background/10 rounded-lg
-                backdrop-blur-sm sm:border-0 sm:backdrop-blur-none sm:bg-transparent
-                flex flex-col sm:ps-4'>
+                backdrop-blur-sm sm:border-0 sm:backdrop-blur-none sm:bg-transparent sm:ps-4'>
 					<span className='text-base p-4 sm:text-lg lg:text-xl  text-foreground/80 font-extrabold xl:text-xl sm:mt-18 md:mt-16 lg:mt-15 uppercase'>
 						Vascular Surgery
 					</span>
@@ -46,7 +49,7 @@ export function Hero() {
 					<ul className='grid grid-cols-2  xl:grid-cols-4 gap-2 px-4 py-2'>
 						<li className='rounded-xl border border-primary/20 bg-primary/5 p-2'>
 							<div className='flex gap-2 items-center'>
-								<BriefcaseMedical className='w-4 h-4 md:w-6 md:h-6  text-primary/80 mb-1' />
+								<LuBriefcaseMedical className='w-4 h-4 md:w-6 md:h-6  text-primary/80 mb-1' />
 								<p className='text-lg font-bold text-foreground/80'>10+</p>
 							</div>
 							<p className='text-[10px] md:text-xs lg:text-base font-medium text-foreground/80'>
@@ -56,7 +59,7 @@ export function Hero() {
 
 						<li className='rounded-xl border border-primary/20 bg-primary/5 p-2'>
 							<div className='flex gap-2 items-center '>
-								<Building2 className='w-4 h-4 md:w-6 md:h-6 text-primary/80 mb-1' />
+								<LuBuilding2 className='w-4 h-4 md:w-6 md:h-6 text-primary/80 mb-1' />
 								<p className='text-lg font-bold text-foreground/80'>4</p>
 							</div>
 							<p className='text-[10px] md:text-xs font-medium lg:text-base text-foreground/80'>
@@ -66,7 +69,7 @@ export function Hero() {
 
 						<li className='rounded-xl border border-primary/20 bg-primary/5 p-2'>
 							<div className='flex gap-2 items-center '>
-								<Database className='w-4 h-4 md:w-6 md:h-6 text-primary/80 mb-1' />
+								<FaDatabase className='w-4 h-4 md:w-6 md:h-6 text-primary/80 mb-1' />
 								<p className='text-lg font-bold text-foreground/80'>1</p>
 							</div>
 							<p className='text-[10px] md:text-xs font-medium lg:text-base text-foreground/80'>
@@ -76,7 +79,7 @@ export function Hero() {
 
 						<li className='rounded-xl border border-primary/20 bg-primary/5 p-2'>
 							<div className='flex gap-2 items-center '>
-								<Globe className='w-4 h-4 md:w-6 md:h-6 text-primary/80 mb-1' />
+								<FaGlobe className='w-4 h-4 md:w-6 md:h-6 text-primary/80 mb-1' />
 								<p className='text-lg font-bold text-foreground/80'>2</p>
 							</div>
 							<p className='text-[10px] md:text-xs font-medium lg:text-base text-foreground/80'>

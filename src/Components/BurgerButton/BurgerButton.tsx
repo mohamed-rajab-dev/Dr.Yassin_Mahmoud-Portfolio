@@ -1,26 +1,29 @@
 'use client';
 
 import { useEffect, useRef } from 'react';
-import type { BurgerButtonProps } from '@/Types/BurgerButtonProps';
+import type { BurgerProps } from '@/Types/BurgerProps';
 
 export function BurgerButton({
 	isOpenMobile,
 	setIsOpenMobile,
+	setIsHidden,
 	mobileMenuRef,
-}: BurgerButtonProps) {
+}: BurgerProps) {
 	const buttonRef = useRef<HTMLButtonElement>(null);
 
 	// Close mobile menu on desktop screen
 	useEffect(() => {
-		const media = window.matchMedia('(min-width: 768px)');
+		const media = window.matchMedia('(min-width: 640px)');
 
 		if (media.matches) {
 			setIsOpenMobile(false);
+			setIsHidden(true);
 		}
 
 		const listener = (e: MediaQueryListEvent) => {
 			if (e.matches) {
 				setIsOpenMobile(false);
+				setIsHidden(true);
 			}
 		};
 
@@ -29,7 +32,7 @@ export function BurgerButton({
 		return () => {
 			media.removeEventListener('change', listener);
 		};
-	}, [setIsOpenMobile]);
+	}, [setIsOpenMobile, setIsHidden]);
 
 	// Close menu when clicking outside
 	useEffect(() => {
@@ -60,7 +63,19 @@ export function BurgerButton({
 			type='button'
 			aria-label={isOpenMobile ? 'Close menu' : 'Open menu'}
 			aria-expanded={isOpenMobile}
-			onClick={() => setIsOpenMobile(!isOpenMobile)}
+			onClick={() => {
+				if (isOpenMobile) {
+					// Close
+					setIsOpenMobile(false);
+				} else {
+					// OPEN
+					setIsHidden(false);
+
+					requestAnimationFrame(() => {
+						setIsOpenMobile(true);
+					});
+				}
+			}}
 			className='flex items-center justify-center group'>
 			<div
 				className={`flex flex-col ${isOpenMobile ? 'items-center' : 'items-end'} justify-center w-5 h-5 relative`}>

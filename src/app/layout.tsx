@@ -41,10 +41,12 @@ export default async function RootLayout({
 			lang='en'
 			data-theme={theme}>
 			<body
-				className={`${inter.variable} ${merriweather.variable} ${cairo.variable} bg-background`}>
+				className={`${inter.variable} ${merriweather.variable} ${cairo.variable} bg-background `}>
 				<ThemeRevealProvider initialTheme={theme}>
 					<Navbar />
-					<div className='w-full max-w-site mx-auto'>{children}</div>
+					<div className='w-full max-w-site mx-auto scrollbar h-screen overflow-y-auto '>
+						{children}
+					</div>
 				</ThemeRevealProvider>
 			</body>
 		</html>

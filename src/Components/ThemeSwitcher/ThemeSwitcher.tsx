@@ -1,5 +1,6 @@
 'use client';
-import { Sun, Moon } from 'lucide-react';
+import { FiSun } from 'react-icons/fi';
+import { LuMoon } from 'react-icons/lu';
 import { useThemeReveal } from '@/Hooks/ThemeRevealContext';
 import { useRef } from 'react';
 export function ThemeSwitcher() {
@@ -32,9 +33,9 @@ export function ThemeSwitcher() {
 			disabled={isAnimating}
 			aria-label='Toggle theme'>
 			{theme === 'dark' ? (
-				<Sun className='w-10 h-6 text-foreground' />
+				<FiSun className='w-10 h-6 text-foreground' />
 			) : (
-				<Moon className='w-10 h-6 text-foreground' />
+				<LuMoon className='w-10 h-6 text-foreground' />
 			)}
 		</button>
 	);

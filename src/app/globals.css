@@ -10,14 +10,14 @@ html[data-theme="dark"] {
   --background: hsl(218, 80%, 3%);
   --navbar-background: hsl(218, 80%, 6%);
   --foreground: hsl(0, 0%, 90%);
-  --primary: hsl(215, 100%, 58%);
+  --primary: hsl(212, 100%, 66%);
 }
 
 html[data-theme="light"] {
   --background: hsl(218, 80%, 90%);
   --navbar-background: hsl(0, 0%, 96%);
   --foreground: hsl(0, 0%, 10%);
-  --primary: hsl(215, 96%, 45%);
+  --primary: #1447e6;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -104,6 +104,27 @@ html[data-transition="collapse"]::view-transition-new(root) {
   -webkit-text-fill-color: transparent;
   animation: shine 3s linear infinite;
 } */
+
+/* Firefox */
+.scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: var(--primary) transparent;
+  /* thumb track */
+}
+
+/* Chrome, Edge, Safari */
+.scrollbar::-webkit-scrollbar {
+  width: 8px;
+}
+
+.scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.scrollbar::-webkit-scrollbar-thumb {
+  background: var(--primary);
+  border-radius: 4px;
+}
 
 @theme inline {
   --color-background: var(--background);
